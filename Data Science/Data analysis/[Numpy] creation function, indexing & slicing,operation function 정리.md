@@ -197,3 +197,134 @@ print(ar1[1:3])
 ### fancy index
 # operation functions (sum, max, argmin, mean, ...)
 ## sum (ndarray element들의 합)
+```python
+v1=np.arange(1,11)
+v1
+np.sum(v1)
+v1.sum()
+```
+### 결과
+```
+array([1,2,3,4,5,6,7,8,9,10])
+55
+55
+```
+## sum with axis parameter
+## axis: operation function을 실행할 때, 기준이 되는 축
+## axis = 0 행값들을 열에 대해 더하기 (가로)
+## axis = 1 열값들을 행에 대해 더하기 (세로)
+```python
+m1=np.arange(1,13).reshape(3,4) 
+m1
+np.sum(m1, axis=0)
+np.sum(m1, axis=1)
+```
+### 결과
+```
+array([[1,2,3,4],
+       [5,6,7,8],
+       [9,10,11,12]] )
+78
+array([15,18,21,24])
+array([10,26,42])
+```
+## 3차원 tensor
+```python
+ar1=np.arange(12).reshape(2,3,2)
+ar1
+ar1[0,2,1] # 0번째 행렬에 2번째 행에 1번째 열
+ar1[0][2][1]
+```
+### 결과
+```
+array([[[ 0, 1],
+        [ 2, 3],
+        [ 4, 5]],
+
+        [[ 6, 7],
+         [ 8, 9],
+         [10, 11]]])
+5
+5
+```
+```python
+m1=np.arange(1,13).reshape(3,4)
+m1
+# mean
+np.mean(m1,axis=1)
+m1.mean(axis=1)
+# median
+np.median(m1,axis=0)
+```
+```
+array([[ 1, 2, 3, 4],
+       [ 5, 6, 7, 8],
+       [ 9, 10, 11, 12]])
+array([ 2.5, 6.5, 10.5])
+array([ 2.5, 6.5, 10.5])
+array([5., 6., 7., 8.])
+```
+## std & variance
+```python
+m1=np.arange(12).reshape(3,4)
+m1
+# std
+m1.std(axis=1)
+np.std(m1, axis=1)
+# variance
+m1.var(axis=0)
+np.var(m1, axis=0)
+```
+### 결과
+```
+array([[ 0, 1, 2, 3],
+[ 4, 5, 6, 7],
+[ 8, 9, 10, 11]])
+array([1.11803399, 1.11803399, 1.11803399])
+array([1.11803399, 1.11803399, 1.11803399])
+array([10.66666667, 10.66666667, 10.66666667, 10.66666667])
+array([10.66666667, 10.66666667, 10.66666667, 10.66666667])
+```
+## max & min
+```python
+a1=np.random.randint(100, size=(3,4))
+a1
+# min
+np.min(a1)
+np.min(a1, axis=0)
+# max
+np.max(a1)
+np.max(a1, axis=0)
+```
+### 결과
+```
+array([[10, 22, 83, 88],
+       [44, 74, 98, 45],
+       [46, 90, 48, 83]])
+10
+array([10, 44, 46]) # axis=0, 세로
+98
+array([10, 22, 83, 88]) # axis=1, 가로
+```
+## argmax & argmin
+`argmax` : 최대값이 있는 곳 index / `argmin` : 최소값이 있는 곳 index
+```python
+m1=np.random.randint(100, size=(3,4))
+m1
+# argmin
+np.argmin(m1)
+np.argmin(m1.flatten())
+np.argmin(m1,axis=1) # 전체에서 가장 작은 값 11 → flatten하면 위치는 8번째
+# argmax
+np.argmax(m1,axis=0) 
+```
+### 결과
+```
+array([[73, 39, 35, 79],
+       [45, 21, 35, 28],
+       [11, 77, 58, 71]])
+8
+8
+array([2, 1, 0])
+array([0, 2, 2, 0])
+```

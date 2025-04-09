@@ -211,8 +211,8 @@ array([1,2,3,4,5,6,7,8,9,10])
 ```
 ## sum with axis parameter
 ## axis: operation function을 실행할 때, 기준이 되는 축
-## axis = 0 행값들을 열에 대해 더하기 (가로)
-## axis = 1 열값들을 행에 대해 더하기 (세로)
+## axis = 0 행값들을 열에 대해 더하기 (세로)
+## axis = 1 열값들을 행에 대해 더하기 (가로)
 ```python
 m1=np.arange(1,13).reshape(3,4) 
 m1

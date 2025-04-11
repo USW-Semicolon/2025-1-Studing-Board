@@ -213,6 +213,8 @@ array([1,2,3,4,5,6,7,8,9,10])
 ## axis: operation function을 실행할 때, 기준이 되는 축
 ## axis = 0 행값들을 열에 대해 더하기 (세로)
 ## axis = 1 열값들을 행에 대해 더하기 (가로)
+<img width="353" alt="스크린샷 2025-04-11 오후 5 37 27" src="https://github.com/user-attachments/assets/6abf135b-0606-4f65-a0af-567ef45f414c" />
+
 ```python
 m1=np.arange(1,13).reshape(3,4) 
 m1
@@ -229,6 +231,8 @@ array([15,18,21,24])
 array([10,26,42])
 ```
 ## 3차원 tensor
+<img width="355" alt="스크린샷 2025-04-11 오후 5 40 17" src="https://github.com/user-attachments/assets/7b3d393f-1f89-4526-b27c-4c93ad27f83d" />
+
 ```python
 ar1=np.arange(12).reshape(2,3,2)
 ar1
@@ -247,6 +251,17 @@ array([[[ 0, 1],
 5
 5
 ```
+```python
+t1=np.arange(1,25).reshape(2,3,4)
+t1
+np.sum(t1)
+np.sum(t1,axis=0)
+np.sum(t1,axis=1)
+np.sum(t1,axis=2)
+```
+<img width="269" alt="스크린샷 2025-04-11 오후 5 49 14" src="https://github.com/user-attachments/assets/ec0d90b2-231c-40dd-9d40-ed407aa2f9e8" />
+
+## mean & median
 ```python
 m1=np.arange(1,13).reshape(3,4)
 m1
@@ -307,7 +322,7 @@ array([10, 44, 46]) # axis=0, 세로
 array([10, 22, 83, 88]) # axis=1, 가로
 ```
 ## argmax & argmin
-`argmax` : 최대값이 있는 곳 index / `argmin` : 최소값이 있는 곳 index
+`argmax` : 최대값이 있는 곳 index(위치) / `argmin` : 최소값이 있는 곳 index(위치)
 ```python
 m1=np.random.randint(100, size=(3,4))
 m1

@@ -1,19 +1,15 @@
 # 💬 서버와 클라이언트 
 ### 클라이언트 (client) : 데이터나 서비스를 요청하는 프로그램
 ### 서버 (sever) : 클라이언트에 데이터나 서비스를 제공하는 프로그램   
-
-
+<img width="343" alt="스크린샷 2025-04-13 오전 4 46 08" src="https://github.com/user-attachments/assets/421e3fec-1f76-4f9f-8532-6a94300053cd" />
 
 ### 서버의 종류
 영상, 파일, 도메인, 이메일, 채팅, 게임, 앱등..
 
-
-
-
 ### 💬 프로토콜 (protocol)
 * 컴퓨터나 원거리 통신 장비 사이에서 메시지를 주고 받는 양식과 규칙 체계   
 * ___서버와 클라이언트가 데이터를 주고 받는 규약___
-
+<img width="417" alt="스크린샷 2025-04-13 오전 4 47 06" src="https://github.com/user-attachments/assets/71394893-392d-467b-b262-72198e826527" />
 
 ### 프로토콜의 종류
 HTTP : Hyper Text Transfer Protocol   
@@ -31,6 +27,8 @@ ARP : Adress Resolution Protocol
 ### 💬 HTTP
 `HyperText Transfer Protocol`,(하이퍼본문전송규약) 은 웹에서 정보를 주고받을 수 있는 프로토콜.   
 
+<img width="418" alt="스크린샷 2025-04-13 오전 4 48 25" src="https://github.com/user-attachments/assets/3588ea26-b837-4a77-b56c-290060b4a878" />
+
 * 주로 HTML 문서를 주고받는 데에 쓰인다.   
 * ___`80번 포트`를 기본으로 사용한다.___
 * ___클라이언트와 서버 사이에 이루어지는 `요청/응답(request/response)` 프로토콜임.___   
@@ -40,30 +38,30 @@ ARP : Adress Resolution Protocol
 * 웹페이지를 만드는 마크업 언어   
 * `구조적 문서를 만들 수 있는 방법`을 제공 - 제목, 단락, 목록, 링크, 표, 그림, 동영상, 인용 등
 
-### HTML Request Methods
-* `요청 메소드(Request Methods)`
-`GET`   
-읽기 기능   
-`클라이언트가 서버에 데이터를 요청`   
-`POST`   
-쓰기 기능   
-`특정 데이터를 추가 할 것을 요청`   
-PUT   
-수정 기능   
-특정 데이터에 대해 수정하라는 요청   
-DELETE   
-삭제 기능   
-특정 데이터를 삭제할 것을 요청   
+### 💬 HTML Request Methods   
+__요청 메소드(Request Methods)__   
+* `GET`    
+읽기 기능    
+`클라이언트가 서버에 데이터를 요청`    
+* `POST`    
+쓰기 기능    
+`특정 데이터를 추가 할 것을 요청`    
+* PUT    
+수정 기능    
+특정 데이터에 대해 수정하라는 요청    
+* DELETE    
+삭제 기능    
+특정 데이터를 삭제할 것을 요청    
 
-### HTTP 프로토콜
+### 💬 HTTP 프로토콜
 
-
+<img width="418" alt="스크린샷 2025-04-13 오전 4 48 25" src="https://github.com/user-attachments/assets/3588ea26-b837-4a77-b56c-290060b4a878" />
 
 1. 웹 브라우저(클라이언트)는 웹서버(서버)에 HTML 파일을 요청    
 2. `URL을 이용`하여 서버에 받고 싶은 HTML 파일을 지정   
 3. 웹서버는 요청한 HTML 파일을 전송   
 
-### HTTP Status Code (응답코드)
+### 💬 HTTP Status Code (응답코드)
 * 서버가 클라이언트의 요청을 처리한 후, `클라이언트에 처리 결과를 알려주는 코드`   
 1xx : 조건부 응답   
 `2xx : 성공`   
@@ -71,9 +69,7 @@ DELETE
 4xx : 요청 오류   
 5xx : 서버 오류   
 
-
-
-### URL
+### 💬 URL
 예시 : "`https`://`www.google.com`/`search`?`q=python`"   
 프로토콜:` https `  
 호스트: `www.google.com  `    
@@ -120,6 +116,7 @@ print(res.status_code) # 응답코드 출력
 ```
 
 ```python
+## 응답 객체 속성 출력해보기
 import requests as rq
 
 res = rq.get('http://naver.com') # res: 응답객체(response object)
@@ -129,7 +126,12 @@ print(res.request.headers) # 요청헤더
 print(res.url) # URL
 print(res.status_code) # 상태코드
 print(dir(res))  # res의 모든 속성 출력 (Print all attributes of res)
+
 ```
+결과
+<img width="828" alt="image" src="https://github.com/user-attachments/assets/0b3f6b68-8aba-4c0a-b9c6-b427f3696278" />
+
+
 ### URL 적합성 체크하는 함수 만들기
 1. url 요청이 성공 했다면, 'success', url, status code를 출력     
 1. url 요청이 실패하면 'fail'과 url, status code를 출력   

@@ -1,10 +1,10 @@
 # 🐰 중심극한정리
-## 모집단의 분포가 무엇이든 관계없이 n이 크면 표본평균 𝑋 ̅의 분포는 근사적으로 정규분포가 된다. 
-
-
+`모집단의 분포가 무엇이든 관계없이 n이 크면 표본평균 𝑋 ̅의 분포는 근사적으로 정규분포가 된다.`
+   
+<img width="287" alt="스크린샷 2025-04-12 오후 11 07 14" src="https://github.com/user-attachments/assets/66acca54-ae4c-470d-9001-aadb37792ce8" />
 
 ## sample (표본)
-* 총 2,000개의 표본(행) / 한 표본의 개수는 10,000개(열)  v 
+* 총 2,000개의 표본(행) / 한 표본의 개수는 10,000개(열) 
 ```python
 # histogram 그리는 함수 정의
 import matplotlib.pyplot as plt
@@ -16,8 +16,7 @@ def draw_hist(ar1, nbin=20):
 s2= np.random.uniform(3,5,size=(2000,10000))
 print('sample dist> mean: {:.4f}, std: {:,4f}' .format(s1.mean(),s1.std()))
 ```
-
-
+<img width="274" alt="스크린샷 2025-04-12 오후 11 08 17" src="https://github.com/user-attachments/assets/d4fd232b-354b-4a7a-8d67-69a8fc9ea218" />
 
 ## 표본평균들의 분포
 ```python
@@ -45,10 +44,12 @@ a1 = np.random.uniform(3, 5, size=(2000, 10))
 medians = np.median(a1, axis=1)
 print("a1 median dist > mean: {:.4f}, std: {:.4f}".format(medians.mean(), medians.std()))
 ```
+
+<img width="292" alt="스크린샷 2025-04-12 오후 11 09 07" src="https://github.com/user-attachments/assets/1eda5052-412d-40f8-856f-eb8494ca7007" />
+
 # array operation (array간 연산)   
 * array간에는 기본적으로 `shape이 같을 때` 가능하고, element-wise 연산을 수행한다.
-
-
+<img width="588" alt="스크린샷 2025-04-12 오후 11 09 50" src="https://github.com/user-attachments/assets/026c224c-315e-439f-90fa-18eb80dfb960" />
 
 ```python
 # (4,8,12,16,20, … , 40)의 각 element의 제곱들의 합 구하기
@@ -64,9 +65,8 @@ for i in a1 :
 print(a1)
 ```
 ## broadcasting   
-* `shape이 다를 때` array간의 연산을 지원하는 기능 (자동으로 shape을 맞춰 줌)
-
-
+* shape이 다를 때 array간의 연산을 지원하는 기능 `(자동으로 shape을 맞춰 줌)`
+<img width="562" alt="스크린샷 2025-04-12 오후 11 10 19" src="https://github.com/user-attachments/assets/d7495bf6-1470-41ce-9418-d8b417508eb3" />
 
 ```python
 a1 = np.arange(6).reshape(2,3)
@@ -139,6 +139,9 @@ Traceback (most recent call last):
 ## concatenate
 * 두 array를 축에 따라 연결함   
 `np.concatenate((a1,a2,..),axis = 0)`
+
+<img width="357" alt="스크린샷 2025-04-12 오후 11 11 41" src="https://github.com/user-attachments/assets/5f87b9ab-5026-4f9e-8ef8-39eabc82421e" />
+
 ```python
 a1 = np.arange(3)
 a1.shape
@@ -151,8 +154,6 @@ a3.shape
 # (7,)
 a3
 # array([0,1,2,4,5,6,7])
-
-
 
 a1 = np.arange(12).reshape(4,3)
 a1
@@ -198,8 +199,4 @@ v4
 # array([[1, 2, 3, 1],
        # [1, 2, 3, 2],
        # [1, 2, 3, 3]])
-
-
-
-# array([[1, 2, 3]])
 ```

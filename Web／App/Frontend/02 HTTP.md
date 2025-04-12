@@ -27,8 +27,6 @@ ARP : Adress Resolution Protocol
 ### 💬 HTTP
 `HyperText Transfer Protocol`,(하이퍼본문전송규약) 은 웹에서 정보를 주고받을 수 있는 프로토콜.   
 
-<img width="418" alt="스크린샷 2025-04-13 오전 4 48 25" src="https://github.com/user-attachments/assets/3588ea26-b837-4a77-b56c-290060b4a878" />
-
 * 주로 HTML 문서를 주고받는 데에 쓰인다.   
 * ___`80번 포트`를 기본으로 사용한다.___
 * ___클라이언트와 서버 사이에 이루어지는 `요청/응답(request/response)` 프로토콜임.___   
